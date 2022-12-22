@@ -35,5 +35,8 @@ select max(Esalary) from Future_Employee where dept = 'EE';
 select max(esalary) from Future_Employee;
 # having
 select dept,sum(working_hour) as 'total_hours' from Future_Employee group by dept having sum(working_hour)>15;
-#subquery
-select ename,dept,esalary as "min_dept_salary" from Future_Employee where esalary=(select min(Esalary) from Future_Employee);
+#subquery-to show min salary from the employee table
+select ename,dept,esalary as "min_salary_houlder" from Future_Employee where esalary=(select min(Esalary) from Future_Employee);
+#subquery-to show max salary from the employee table
+
+select ename,dept,esalary as "max_salary_houlder" from Future_Employee where esalary=(select max(Esalary) from Future_Employee);
